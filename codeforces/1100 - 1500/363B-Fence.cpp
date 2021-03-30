@@ -23,10 +23,9 @@ int main() {
     for (int i = m; i < k; ++i) curr += arr[i];
     long min = curr;
 
-    for (int i = 1; i < n - k; ++i)
+    for (int i = 1; i < n - (k - 1); ++i)
     {
-        cout << curr << endl;
-        curr = curr - arr[i - 1] + arr[i + k];
+        curr = curr - arr[i - 1] + arr[i + (k - 1)];
         if (curr < min)
         {
             min = curr;
@@ -34,7 +33,7 @@ int main() {
         }
     }
 
-    cout << m << endl;
+    cout << m + 1 << endl;
 
     cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
     return 0;
