@@ -10,11 +10,11 @@ void test_case(int n) {
         v.push_back(input);
     }
 
-    int arr[200000] = { 0 };
+    int arr[200001] = { 0 };
     for (int i = 0; i < v.size(); ++i) ++arr[v[i]];
 
-    int same = *max_element(arr, arr + n);
-    int different = count(arr, arr + n, 1);
+    int same = *max_element(arr, arr + n + 1);
+    int different = n - count(arr, arr + n + 1, 0);
 
     if (same > different + 1)
         cout << different + 1 << endl;
