@@ -15,6 +15,23 @@ int main() {
     int n, m, a, b;
     cin >> n >> m >> a >> b;
 
+    double m_price = b / (double)m;
+
+    if (a <= m_price)
+    {
+        cout << n * a;
+    }
+    else
+    {
+        int m_tickets = n / m;
+        int n_tickets = n - (m_tickets * m);
+        int mix = n_tickets * a + m_tickets * b;
+        if (mix < (m_tickets + 1) * b)
+            cout << mix;
+        else
+            cout << (m_tickets + 1) * b;
+    }
+
     cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
     return 0;
 }
