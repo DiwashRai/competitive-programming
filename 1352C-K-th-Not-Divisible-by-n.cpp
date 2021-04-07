@@ -2,6 +2,17 @@
 
 using namespace std;
 
+int solve(int n, int k)
+{
+    int c = 0;
+    for (int i = 1; i < 2000000001; ++i)
+    {
+        if (i % n != 0) ++c;
+        if (c == k) return i;
+    }
+    return 0;
+}
+
 int main() {
     // turn off buffer sync between c and c++ streams. Decouple cin and cout
     ios_base::sync_with_stdio(false);cin.tie(NULL);
@@ -18,6 +29,8 @@ int main() {
     {
         int n, k;
         cin >> n >> k;
+        int ans = solve(n, k);
+        cout << ans << endl;
     }
 
     cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
