@@ -10,7 +10,7 @@ int solve(int n, int k)
         if (i % n != 0) ++c;
         if (c == k) return i;
     }
-    return 0;
+    return -1;
 }
 
 int main() {
