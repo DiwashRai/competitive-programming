@@ -11,7 +11,7 @@ int solve(int n, int k)
     //     if (c == k) return i;
     // }
     // return -1;
-    return (k / (n - 1)) * n + k % n;
+    return (k / (n - 1)) * n;
 }
 
 int main() {
