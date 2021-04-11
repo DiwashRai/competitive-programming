@@ -4,14 +4,13 @@ using namespace std;
 
 int solve(int n, int k)
 {
-    // int c = 0;
-    // for (int i = 1; i < 2000000001; ++i)
-    // {
-    //     if (i % n != 0) ++c;
-    //     if (c == k) return i;
-    // }
-    // return -1;
-    return (k / (n - 1)) * n;
+    int c = 0;
+    for (int i = 1; i < 2000000001; ++i)
+    {
+        if (i % n != 0) ++c;
+        if (c == k) return i;
+    }
+    return -1;
 }
 
 int main() {
