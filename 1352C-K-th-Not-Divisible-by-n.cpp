@@ -4,13 +4,16 @@ using namespace std;
 
 int solve(int n, int k)
 {
-    int c = 0;
-    for (int i = 1; i < 2000000001; ++i)
-    {
-        if (i % n != 0) ++c;
-        if (c == k) return i;
-    }
-    return -1;
+    // int c = 0;
+    // for (int i = 1; i < 2000000001; ++i)
+    // {
+    //     if (i % n != 0) ++c;
+    //     if (c == k) return i;
+    // }
+    // return -1;
+
+    int a = k / (n - 1);
+    return a;
 }
 
 int main() {
@@ -20,7 +23,7 @@ int main() {
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
-    freopen("error.txt", "w", stderr);
+    // freopen("error.txt", "w", stderr);
     #endif
 
     int t;
@@ -33,6 +36,6 @@ int main() {
         cout << ans << endl;
     }
 
-    cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
+    // cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
     return 0;
 }
