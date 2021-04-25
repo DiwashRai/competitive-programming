@@ -12,20 +12,29 @@ int main() {
     freopen("error.txt", "w", stderr);
     #endif
 
-    int t;
+    long long t, n, a, b;
     cin >> t;
-    while (--t)
+    while (t--)
     {
-        int n;
         cin >> n;
+        cin >> a;
+        long long sum = 0;
         --n;
-        while (--n)
+        while (n--)
         {
-            int x;
-            cin >> x;
-            // cout << x;
+            cin >> b;
+            if (a*b > 0)
+            {
+                if (b > a)
+                    a = b;
+            }
+            else
+            {
+                sum += a;
+                a = b;
+            }
         }
-        cout << "O";
+        cout << sum + a << std::endl;
     }
 
     cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
