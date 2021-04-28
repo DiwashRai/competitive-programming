@@ -12,21 +12,27 @@ int main() {
     freopen("error.txt", "w", stderr);
     #endif
 
-    long long n, a, m, q;
+    long long n, a, b, m, q;
     cin >> n;
+    std::vector<long long> v;
+    cin >> a;
+    v.push_back(0);
+    v.push_back(a);
+    --n;
     while (n--)
     {
-        cin >> a;
-        cout << a << ' ';
+        cin >> b;
+        a = a + b;
+        v.push_back(a);
     }
-    cout << std::endl;
     cin >> m;
     while (m--)
     {
         cin >> q;
-        cout << q << ' ';
+        vector<long long>::iterator upper;
+        upper = std::lower_bound(v.begin(), v.end(), q);
+        cout << (upper- v.begin()) << std::endl;
     }
-    cout << std::endl;
 
     cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
     return 0;
