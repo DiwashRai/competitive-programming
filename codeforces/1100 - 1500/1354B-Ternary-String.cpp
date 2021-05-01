@@ -18,6 +18,21 @@ int main() {
     while (t--)
     {
         cin >> s;
+        int min_length = 200001;
+        int a[4] = { 0 };
+        for (int i = 0; i < s.size(); ++i)
+        {
+            a[s[i]-'0'] = i+1;
+            if (a[1] && a[2] && a[3])
+            {
+                int min = std::min({a[1], a[2], a[3]});
+                int max = std::max({a[1], a[2], a[3]});
+                int length = max - min + 1;
+                if (length < min_length)
+                    min_length = length;
+            }
+        }
+        cout << (min_length==200001?0:min_length) << std::endl;
     }
 
     cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
