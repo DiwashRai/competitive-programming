@@ -12,8 +12,24 @@ int main() {
     freopen("error.txt", "w", stderr);
     #endif
 
-    int n;
-    cin >> n;
+    int t;
+    cin >> t;
+
+    while (t--)
+    {
+        int n, e;
+        cin >> n;
+        std::vector<int> v;
+        while (n--)
+        {
+            cin >> e;
+            v.push_back(e);
+        }
+        std::sort(v.begin(), v.end());
+        for (auto x : v)
+            cout << x << ' ';
+        cout << std::endl;
+    }
 
     cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
     return 0;
