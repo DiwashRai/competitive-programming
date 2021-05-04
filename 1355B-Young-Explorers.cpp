@@ -25,10 +25,29 @@ int main() {
             cin >> e;
             v.push_back(e);
         }
+
+        int groups = 0, count = 0;
         std::sort(v.begin(), v.end());
-        for (auto x : v)
-            cout << x << ' ';
-        cout << std::endl;
+        for (int i = 0; i < v.size(); ++i)
+        {
+            if (v[i] == 1)
+            {
+                ++groups;
+                continue;
+            }
+
+            if (count >= v[i])
+            {
+                ++groups;
+                count = 0;
+                continue;
+            }
+            else
+            {
+                ++count;
+            }
+        }
+        cout << groups << std::endl;
     }
 
     cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
