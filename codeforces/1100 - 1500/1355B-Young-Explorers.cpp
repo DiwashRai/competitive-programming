@@ -30,21 +30,16 @@ int main() {
         std::sort(v.begin(), v.end());
         for (int i = 0; i < v.size(); ++i)
         {
+            ++count;
             if (v[i] == 1)
             {
                 ++groups;
-                continue;
+                count = 0;
             }
-
-            if (count >= v[i])
+            else if (v[i] <= count)
             {
                 ++groups;
                 count = 0;
-                continue;
-            }
-            else
-            {
-                ++count;
             }
         }
         cout << groups << std::endl;
