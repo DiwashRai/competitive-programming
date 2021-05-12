@@ -12,8 +12,12 @@ int main() {
     freopen("error.txt", "w", stderr);
     #endif
 
-    int n;
+    int n, x;
     cin >> n;
+    while (n--)
+    {
+        cin >> x;
+    }
 
     cerr << "time taken: " << (float)clock()/CLOCKS_PER_SEC << " secs" << endl;
     return 0;
